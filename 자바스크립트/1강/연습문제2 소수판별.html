@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h2>소수 판별 프로그램</h2>
+    <script>
+        var n = Number(prompt("숫자를 입력해 주세요."));
+        var i = 2;
+        var isPrime = true;
+        while (i < n) {
+            if(n % i ===0) {
+            isPrime=false;
+            break
+        }
+            console.log(isPrime, i)
+            i++;
+        }      
+
+        if (isPrime) {
+            document.write(n + "은(는) 소수입니다.");
+        }else {
+            document.write(n + "은(는) 소수가 아닙니다. (" + i +")" );
+        }
+    
+    </script>    
+</body>
+</html>
