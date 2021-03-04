@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문을 사용한 구구단 연습</h1>
+    <script>
+        //while, break를 사용하여 조건에 맞을때까지 프롬프트 출력
+     
+        var str = 0;
+        var num = Number(str);
+
+        while((num < 2 || num > 9)||(num != str)) {
+            str = (prompt("몇 단을 출력하시겠습니까?(2이상 9이하의 숫자)"));    
+            num = Number(str); 
+            // if (  )  {
+            //     num = Number(prompt("몇 단을 출력하시겠습니까?(2이상 9이하의 숫자)"));
+            //     } else {
+            //     document.write("<h2>구구단 " +num+"단</h2>");
+            //         for (var i =1; i<10; i++) {
+            //         document.write(num+" * "+i+" = "+ (num*i) + "<br>");
+            //         }    
+            //     }
+            }
+        
+            document.write("<h2>구구단 " +num+"단</h2>");
+                    for (var i =1; i<10; i++) {
+                    document.write(num+" * "+i+" = "+ (num*i) + "<br>");
+                }
+
+
+    </script>
+</body>
+</html>
