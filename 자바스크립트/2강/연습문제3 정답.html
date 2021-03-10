@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>소수 판별 문제</h1>
+    <script>
+        var numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+
+        numbers.addAll = function(max_num) {
+        for (var i = 2; i<=max_num; i++) {
+            this.all.push(i);
+            }
+        };
+       
+        numbers.isPrime = function(number) {
+        for (var i =2; i < number; i++){
+            if (number % i === 0 ) {
+                return false;
+                } 
+            } return true;
+        };
+
+        
+        numbers.addPrime = function() {
+            for (var i = 0 ; i<this.all.length; i++ ) {
+                var n = this.all[i]
+                if(this.isPrime(n)===true){
+                    this.prime.push(n);
+                }
+            }
+        }; 
+
+        numbers.getAllPrimes=function() {
+            document.write((this.all.length+1) +" 까지 소수의 개수는 " + this.prime.length +"개 입니다."+"<br>"+"<br>");
+            for(var i=0; i<this.prime.length; i++) {
+                document.write((i+1) + "번째 소수는 " + this.prime[i] + "입니다. <br>");
+            }
+        };
+    
+   
+    numbers.addAll (10000);
+    numbers.addPrime();        
+    numbers.getAllPrimes();
+    
+ 
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>소수 판별 문제</h1>
+    <script>
+        var numbers = {}
+        numbers.all = [];
+        numbers.prime = [];
+
+        numbers.addAll = function(max_num) {
+        for (var i = 1; i<=max_num; i++) {
+            this.all.push(i);
+            }
+        }
+       
+        numbers.isPrime = function(number) {
+        for (var i =2; i < number; i++){
+            if (number % i === 0 ) {
+                return false;
+                } else {
+                return true;
+                }
+            }
+        }
+        
+        numbers.addPrime = function(number) {
+            if (this.isPrime(number)=true) {
+                this.prime.push(number);
+            } 
+        }
+
+        numbers.getAllPrimes=function() {
+            for (var i=0; i<this.prime.lenght; i++) {
+                document.write(this.prime[i] +"는 소수입니다. <br>");
+            }
+        }        
+    
+   
+    numbers.addAll (10000);
+    for (var i = 1; i<=10000; i++) {
+        numbers.addPrime(i)        
+    }
+    numbers.getAllPrimes();
+
+
+    </script>
+</body>
+</html>
