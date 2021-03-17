@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+</head>
+<body>
+    <script>
+        var Human = function(name, hp, pow, energy) {
+            this.name = name;
+            this.hp = hp;
+            this.pow = pow;
+            this.energy = energy;
+            this.attack = function(target) {
+                console.log(this.name +"이 " +target.name +"을 공격했다.")
+                target.hp -= this.pow;
+            }
+            this.eat = function(food) {
+                console.log(this.name +"이 " +food.name +"을 먹었다.")
+                this.energy += food.energy
+            }
+        }
+        
+        var p1 = new Human ("person1", 100, 20, 0)
+        var p2 = new Human ("person2", 200, 50, 0)
+
+        var Food = function(name, energy) {
+            this.name = name
+            this.energy = energy
+        }
+
+        var d = new Food ("도넛", 50)
+        
+        p1.eat(d)
+
+    </script>
+</body>
+</html>
