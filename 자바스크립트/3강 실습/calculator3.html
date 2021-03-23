@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>문자열 계산기 구현하기</h2>
+    <div id="body">사칙연산 계산기</div>
+    <input type="text" id="enter1" placeholder="숫자 1을 입력해주세요">
+    <input type="text" id="op" placeholder="연산자를 입력해주세요">
+    <input type="text" id="enter2" placeholder="숫자 2를 입력해주세요"> 
+    <button onclick="main()" >확인</button>
+    <p id = "return">결과가 표시됩니다.</p>
+    <script>
+        
+        function main() {
+            var n1 = document.getElementById("enter1").value
+            var x = Number(n1)
+            var n2 = document.getElementById("enter2").value
+            var y = Number(n2)
+            var op = document.getElementById("op").value
+            console.log("사칙연산 계산기");
+            var result = document.getElementById("return")
+            str = ""
+            switch (op) {
+                case "+" :
+                str += x+" + " +y+" = "+(x+y)+"<br>";
+                break;
+                case "-" :
+                str += x+" - " +y+" = "+(x-y)+"<br>";
+                break;
+                case "*" : 
+                case "x" : 
+                str += x+" x " +y+" = "+(x*y)+"<br>";
+                break;
+                case "/" : 
+                str += x+" / " +y+" = "+(x/y)+"<br>";
+                break;
+                default:
+                str += "사칙연산자를 입력해주세요";
+            }
+                       
+            result.innerHTML = str
+            
+        }
+
+
+    </script>
+</body>
+</html>
