@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>문자열 계산기 구현하기</h2>
+    <div id="body">계산기 숫자입력</div>
+    <p id = "return">결과가 표시됩니다.</p>
+    <script>
+        var input = {count:2}
+        
+        input.getFirstValue = function() {
+            var num1 = Number(prompt("첫번째 숫자를 입력해 주세요."));
+            return num1;
+        };
+        
+        input.getSecondValue= function() {
+            var num2 = Number(prompt(this.count +"번째 숫자를 입력해 주세요."));
+            this.count++;
+            return num2;
+        };
+        
+        input.getOperator = function() {
+            while(true) {
+               var op = prompt("연산자를 입력해주세요.(q를 입력하면 종료)")
+               if (op === "+" || op === "-" || op === "*" || op === "x" || op === "/" || op === "q") {
+                break;
+                } else {
+                    alert ("올바른 연산자를 입력해 주세요.")
+                }
+            }
+            return op;
+        };
+        
+        var calculator = {}
+        calculator.calculate = function(num1, num2, op) {
+            var ret;
+            switch (op) {
+                case "+":
+                ret = num1 + num2;
+                break;
+                case "-":
+                ret = num1 - num2;
+                break;
+                case "*":
+                ret = num1 * num2;
+                break;
+                case "x":
+                ret = num1 * num2;
+                break;
+                case "/":
+                ret = num1 / num2;
+                break;
+            }
+            return ret;
+        };
+           
+        var output = {};
+        output.out = document.getElementById("return");
+        output.print = function(result) {
+            this.out.innerHTML= "최종 결과값은 "+ result + "입니다.";
+        };    
+
+        function main (){
+            var result = input.getFirstValue();
+            while (true) {
+                var op = input.getOperator();
+                if (op === "q") {
+                    break;
+                }
+                var num2 = input.getSecondValue();
+                result = calculator.calculate(result, num2, op);
+            }
+            output.print(result);
+        }
+
+        main();
+    </script>
+</body>
+</html>
