@@ -1,14 +1,51 @@
+        var input = {'array':[]};
+
+        input.getInput = function() {
+            return this.array.join("");
+        };
+
+        var output = {};
+        output.text = document.getElementById('output');
+
         var clickNumbers = function(event) {
-            console.log("click Numbers");
+            var str=event.target.innerHTML;
+            console.log(str);
+
+            switch (str) {
+                case '←' :
+                input.array.pop();
+                break;
+                case '+' :
+                input.array.push(' '+str+' ');
+                break;
+                case '-':
+                input.array.push(' '+str+' ');
+                break;
+                case '*':
+                input.array.push(' '+str+' ');
+                break;
+                case '/':
+                input.array.push(' '+str+' ');
+                break;
+                default:
+                input.array.push(str);
+            }
+
+            if (input.array.length === 0) {
+                output.text.innerHTML = "0";                
+            } else {
+              output.text.innerHTML = input.getInput();
+            }
+        }
+
+
+
+        var showResult = function(event) {
+            console.log("Result")
             console.log(event.target.innerHTML)
         }
 
-        var clickOthers = function(event) {
-            console.log("click Others")
-            console.log(event.target.innerHTML)
-        }
 
-        // var input = {}
         
         // input.init =function(str) {
         //     this.list = str.split("");
