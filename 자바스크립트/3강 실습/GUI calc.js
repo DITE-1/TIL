@@ -16,14 +16,8 @@
                 input.array.pop();
                 break;
                 case '+' :
-                input.array.push(' '+str+' ');
-                break;
                 case '-':
-                input.array.push(' '+str+' ');
-                break;
                 case '*':
-                input.array.push(' '+str+' ');
-                break;
                 case '/':
                 input.array.push(' '+str+' ');
                 break;
@@ -34,7 +28,7 @@
             if (input.array.length === 0) {
                 output.text.innerHTML = "0";                
             } else {
-              output.text.innerHTML = input.getInput();
+                output.text.innerHTML = input.getInput();
             }
         }
 
