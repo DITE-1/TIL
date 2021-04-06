@@ -1,46 +1,40 @@
-        var input = {'array':[]};
+var input = { 'array': [] };
 
-        input.getInput = function() {
-            return this.array.join("");
-        };
+input.getInput = function () {
+    return this.array.join("");
+};
 
-        var output = {};
-        output.text = document.getElementById('output');
+var output = {};
+output.text = document.getElementById('output');
 
-        var clickNumbers = function(event) {
-            var str=event.target.innerHTML;
-            console.log(str);
+var clickNumbers = function (event) {
+    var str = event.target.innerHTML;
+    console.log(str);
 
-            switch (str) {
-                case '←' :
-                input.array.pop();
-                break;
-                case '+' :
-                case '-':
-                case '*':
-                case '/':
-                input.array.push(' '+str+' ');
-                break;
-                default:
-                input.array.push(str);
-            }
+    if (str === '←') {
+        input.array.pop();
+    } else if ( str === '+' || str === '-' || str === '*' || str==='/' ){
+        input.array.push(' ' + str + ' ');
+    } else {
+        input.array.push(str);
+    }
 
-            if (input.array.length === 0) {
-                output.text.innerHTML = "0";                
-            } else {
-                output.text.innerHTML = input.getInput();
-            }
-        }
+    if (input.array.length === 0) {
+        output.text.innerHTML = "0";
+    } else {
+        output.text.innerHTML = input.getInput();
+    }
+}
 
 
 
-        var showResult = function(event) {
-            console.log("Result")
-            console.log(event.target.innerHTML)
-        }
+var showResult = function (event) {
+    console.log("Result")
+    console.log(event.target.innerHTML)
+}
 
 
-        
+
         // input.init =function(str) {
         //     this.list = str.split("");
         // }
@@ -54,7 +48,7 @@
         //     var num1 = Number(str);
         //     return num1;
         // };
-        
+
         // input.getOperator = function() {
 
         //     var op = this.list.shift();
@@ -62,10 +56,10 @@
         //         return op;
         //     } else {
         //         return "$"
-                    
+
         //     }
         // };
-        
+
         // var calculator = {}
         // calculator.calculate = function(num1, num2, op) {
         //     var ret;
@@ -90,14 +84,14 @@
         //     }
         //     return ret;
         // };
-           
+
         // var output = {};
         // output.out = document.getElementById("return");
         // output.print = function(result) {
         //     this.out.innerHTML= "최종 결과값은 "+ result + "입니다.";
         // };    
 
-      
+
         // function calc() {
         //     var str = document.getElementById('input').value;
         //     input.init(str);
@@ -109,4 +103,3 @@
         //     }
         //     output.print(result);
         // }
-        
