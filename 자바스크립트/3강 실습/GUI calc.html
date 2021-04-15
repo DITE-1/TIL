@@ -8,47 +8,49 @@
     <style>
          *:focus { outline:none; }
         body {font-size:2em}
-        #button1, #button2, #button3, #button4 {font-size:0px;}
-        button { width: 100px; height:105px; margin:3px; font-size:25px; color:white;
+        #frame {background-color: rgb(235, 231, 226); width: 430px; border-radius: 20px; padding: 10px; } 
+        #output { height: 80px; display: table-cell; vertical-align: middle; color:rgb(112, 115, 124); font-size:40px; padding-left:10px; line-height:100%; word-break:break-all;} 
+        #button1, #button2, #button3, #button4 {font-size:0px; text-align: center;}
+        button { width: 100px; height:105px; margin:3px; font-size:28px; color:white;
                 background-color: rgba(163, 161, 158, 0.671); border:2px #b1b0b0 solid;
                 border-radius: 18px;
                 transition:background-color, border;
                 transition-duration: 0.2s;
                 transition-timing-function:ease-in;}
-        button:hover {background-color: rgba(111, 115, 128, 0.74); border: 2px rgb(112, 115, 124) solid;
+        button:hover {background-color: rgba(128, 123, 111, 0.74); border: 2px rgb(112, 115, 124) solid;
                 transition:background-color, border;
                 transition-duration: 0.05s;
                 transition-timing-function:ease-in;}
-        button:active {background-color: rgb(204, 214, 223); border: 2px rgb(163, 163, 163) solid;}
+        button:active {background-color: rgb(107, 104, 100); border: 2px  rgb(112, 115, 124) solid;}
     </style>
 </head>
 <body>
     <h2>자바 스크립트 계산기</h2>
-    <div>
+    <div id = "frame">
         <div id="output">0</div>
         <div id="button1">
             <button id='7' onclick='clickNumbers(event)'>7</button>
             <button id='8' onclick='clickNumbers(event)'>8</button>
             <button id='9' onclick='clickNumbers(event)'>9</button>
-            <button id='div' onclick='clickOthers(event)'>/</button>
+            <button id='div' onclick='clickNumbers(event)'>/</button>
         </div>
         <div id="button2">
             <button id='4' onclick='clickNumbers(event)'>4</button>
             <button id='5' onclick='clickNumbers(event)'>5</button>
             <button id='6' onclick='clickNumbers(event)'>6</button>
-            <button id='multi' onclick='clickOthers(event)'>*</button>
+            <button id='multi' onclick='clickNumbers(event)'>*</button>
         </div>
         <div id="button3">
             <button id='1' onclick='clickNumbers(event)'>1</button>
             <button id='2' onclick='clickNumbers(event)'>2</button>
             <button id='3' onclick='clickNumbers(event)'>3</button>
-            <button id='sub' onclick='clickOthers(event)'>-</button>
+            <button id='sub' onclick='clickNumbers(event)'>-</button>
         </div>
         <div id="button4">
             <button id='del' onclick='clickNumbers(event)'>←</button>
             <button id='2' onclick='clickNumbers(event)'>0</button>
-            <button id='eq' onclick='clickNumbers(event)'>=</button>
-            <button id='plus' onclick='clickOthers(event)'>+</button>
+            <button id='eq' onclick='showResult(event)'>=</button>
+            <button id='plus' onclick='clickNumbers(event)'>+</button>
         </div>
     </div>
     <script src='GUI calc.js'>
