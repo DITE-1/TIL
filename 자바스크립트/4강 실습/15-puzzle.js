@@ -39,7 +39,8 @@ game.refresh = function () {
     this.choose();
     this.addButtons();
     this.updateDisplay();
-}
+};
+
 game.refresh();
 
 game.copyBtnText = function () {
@@ -92,7 +93,16 @@ game.shuffle = function () {
 };
 game.shuffle();
 
+
+var reset = function() {
+    var spell = document.querySelector('#word2');
+    while ( spell.childNodes.length != 0) {
+    spell.removeChild(spell.childNodes[0])
+    };
+}
+
 var F5 = function () {
+    reset();
     game.refresh();
     game.shuffle();
-}
+};
