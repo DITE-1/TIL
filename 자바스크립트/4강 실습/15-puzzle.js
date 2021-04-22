@@ -130,7 +130,8 @@ game.shuffle = function () {
         game.swap();
     }
 
-    var n = Math.floor(Math.random() * (game.letters.length -1))
+    var rmax = Math.max(game.answer.length -2 , 1)
+    var n = Math.floor(Math.random() * rmax) + 1;
 
     for (i = 0; i < n; i++) {
         game.Rshift();
