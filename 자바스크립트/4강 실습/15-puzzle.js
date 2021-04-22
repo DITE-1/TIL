@@ -3,6 +3,7 @@ var word = document.getElementById('word1') // answer
 var word2 = document.getElementById('word2') //button
 var check = document.getElementById('check') //word1 === word2?
 var progress = document.getElementById('progress') // progress check
+var time = document.getElementById('time')
 
 // game object 
 var game = {
@@ -10,6 +11,8 @@ var game = {
     'maxPlay': 3,
     'current': 0
 };
+
+game.starTime = Date.now();
 
 game.wordlist = 'almond,headphone,horizon,speaker,tissue,hat,socks,clothes'.split(',')
 
@@ -97,7 +100,9 @@ game.progress = function () {
     }
 
     if (game.current === game.maxPlay) {
-        alert("Thank you for playing!")
+        var result = (Date.now() - game.starTime) / 1000
+        alert("Thank you for playing! Your Record:" +result +" sec")
+        clearInterval(x);
     }
 }
 
@@ -133,6 +138,10 @@ game.shuffle = function () {
 };
 game.shuffle();
 
+var updateTime = function () {
+    now = Date.now() - game.starTime;
+    time.innerHTML = "time : " +(now/1000) +"sec"
+}
 
 var reset = function () {
     for (var i = 0; i < game.btns.length; i++) {
@@ -151,3 +160,5 @@ var F5 = function () {
     game.refresh();
     game.shuffle();
 };
+
+var x = setInterval(updateTime, 100)
